@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_registro_eventos">
+
+    <fragment
+        android:id="@+id/nav_registro_eventos"
+        android:name="com.example.checkpoint3.ui.home.RegistroEventosFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_registro_eventos" />
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.checkpoint3.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_dados_cadastrais"
+            app:destination="@id/nav_dados_cadastrais" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_dados_cadastrais"
+        android:name="com.example.checkpoint3.ui.dados.DadosCadastraisFragment"
+        android:label="@string/menu_dados_cadastrais"
+        tools:layout="@layout/fragment_dados_cadastrais" >
+        <action
+            android:id="@+id/action_nav_dados_cadastrais_to_dados_saude"
+            app:destination="@id/nav_dados_saude" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_configuracao"
+        android:name="com.example.checkpoint3.ui.configuracao.ConfiguracaoFragment"
+        android:label="@string/menu_configuracao"
+        tools:layout="@layout/fragment_configuracao" />
+    <fragment
+        android:id="@+id/nav_dados_saude"
+        android:name="com.example.checkpoint3.ui.dados.DadosSaudeFragment"
+        android:label="fragment_dados_saude"
+        tools:layout="@layout/fragment_dados_saude" >
+        <action
+            android:id="@+id/action_nav_dados_saude_to_dadosSintomasFragment"
+            app:destination="@id/nav_dados_sintomas" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_dados_sintomas"
+        android:name="com.example.checkpoint3.ui.dados.DadosSintomasFragment"
+        android:label="fragment_dados_sintomas"
+        tools:layout="@layout/fragment_dados_sintomas" >
+        <action
+            android:id="@+id/action_dadosSintomasFragment_to_filaFragment"
+            app:destination="@id/nav_fila" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_fila"
+        android:name="com.example.checkpoint3.ui.dados.FilaFragment"
+        android:label="fragment_fila"
+        tools:layout="@layout/fragment_fila" />
+</navigation>
+
